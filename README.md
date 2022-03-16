@@ -1,11 +1,11 @@
 # .Pyrate
-A self-destructing Qt5 web browser written in python and designed for/with unique functions.
+A small, self-destructing Qt5 web browser written in python and designed for/with unique functions.
 
 ### What do you mean self-destructing? ###
 When a Qt5 web browser is launched it creates a .local file that hosts all of the cookie-cache's targeted by evercookies (aka serverside cookies). I created a function titled ".abandonShip" that removes the Qt5 folder entirely, with all of it's contents, on command. I tested it against multiple serverside cookies and have yet to find one not removed by this process. That isnt to say it isnt possible, just that, for most practical purposes this proves effective.
 
 ### What is with the .weirdLettering() ###
-That is Qt5 syntax. While I have no problem sharing, I for sure picked the flavors I wanted- the logo is from the Pirate Party wiki (https://en.wikipedia.org/wiki/Pirate_Party), the navigation buttons (forward/backward/stop/reload) are all reduced to 1 character symbols, the toolbars are detachable (which is like 'it has pockets' for programmers), and the naming of options had more to do with saving space then trying to be "l33t".
+That is Qt5 syntax: the naming of options had more to do with saving space then trying to be "l33t".
 
 ### Ok, so what other "unique" functions are there? It's just a browser. ###
 True, there isnt anything new under the sun here (besides maybe the self-destruction thing.) It is .onion enabled so if you have already downloaded Tor you can now access .onion sites in .Pyrate aswell. It has the ability to play/load/view contents through drag and drop from your home folder making it useable beyond just visiting websites. It still has bookmarks, downloads, ect.. However the way it is arranged is fairly unique:
@@ -22,7 +22,6 @@ True, there isnt anything new under the sun here (besides maybe the self-destruc
 
 ### Why? ###
 Occams razor: the simplest solution is the most likely one. You dont need 34mb to make a connection to a .onion website and you dont need machine learning to remove a server side cookie. If you browsing data is stored in memory, and your memory is reset when the power turns off, you automatically reset your browsing data on open/close.
-There are benifits to running a browser that is compiled at runtime. For starters, everything is stored/operated in memory, except a few .txt documents, which saves disk space. Even then, .Pyrate isnt very memory hungry- there arent a lot of complex tasks- so the risks of it over running your memory is low. Modifying the package is easy. Deleting it is even easier.
 No one expects you to delete firefox and use .Pyrate but if youre looking for a fun project to reverse engineer/beautify or give to your teenage relative with the clear instructions ***NOT*** to abuse downloads, this might be it.
 
 ### Notes: ###
