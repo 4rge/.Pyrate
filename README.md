@@ -4,7 +4,7 @@ A self-destructing Qt5 web browser written in python and designed for/with uniqu
 ### What do you mean self-destructing? ###
 When a Qt5 web browser is launched it creates a .local file that hosts all of the cookie-cache's targeted by evercookies (aka serverside cookies). I created a function titled ".abandonShip" that removes the Qt5 folder entirely, with all of it's contents, on command. I tested it against multiple serverside cookies and have yet to find one not removed by this process. That isnt to say it isnt possible, just that, for most practical purposes this proves effective.
 
-### What is with the '.weirdLettering()??' ###
+### What is with the .weirdLettering() ###
 That is Qt5 syntax. While I have no problem sharing, I for sure picked the flavors I wanted- the logo is from the Pirate Party wiki (https://en.wikipedia.org/wiki/Pirate_Party), the navigation buttons (forward/backward/stop/reload) are all reduced to 1 character symbols, the toolbars are detachable (which is like 'it has pockets' for programmers), and the naming of options had more to do with saving space then trying to be "l33t".
 
 ### Ok, so what other "unique" functions are there? It's just a browser. ###
