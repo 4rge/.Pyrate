@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  </head>
+	<title>Pyrate_Player</title>
+<style>
+	* { box-sizing: border-box; }
+	body { margin: auto; font-family: sans-serif; }
+	button {display: auto; width: 100%; background-color: rgba(0, 0, 0, 0.7); text-align: center; text-decoration: none; text-transform: uppercase; color: #ffffff; left: 0; top: 0; padding: 2em; font-size: .5em;}
+	video {z-index: auto; display: auto ; margin: auto; background-color: #000000; width: auto; height: auto ; max-width: auto; max-height: auto;}
+	@keyframes fadeOut {0%   { opacity: 1; } 85%  { opacity: 1; } 100% { opacity: 0; }}
+	.fadeout { animation: fadeOut 1s linear; }
+	input, ul, a {position: absolute; z-index: 2; opacity: 0; transition: opacity .75s ease-out;}
+	input:hover, ul:hover, a:hover { opacity: 1; }
+	input[type=file] { display: auto; }
+	a {display: block; width: 50%; background-color: rgba(0, 0, 0, 0.7); text-align: center auto; text-decoration: none; text-transform: uppercase; color: #ffffff; left: 0; top: 0; padding: 2em; font-size: auto;}
+	input[type=text] { bottom: .5em; left: 1em; font-size: auto; width: 4em; text-align: center; border: 1em solid rgba(0, 0, 0, 0.7);}
+	ul {margin: 0 auto; padding: 0 0 0 1em auto; top: 100 auto; right: 0; color: #e01b24; background-color: rgba(0, 0, 0, 0.7); list-style: none;}
+	li {margin: 0.5em; cursor: pointer;}
+	li.played {text-decoration: line-through; list-style: square;}
+	body {background-color: #000000; color: #e01b24;}
+	.dark-mode {background-color: black; color: #e01b24;}
+	.light-mode {background-color: #e01b24; color: black;}
+</style>
+<ul></ul>
+<body>
+    <h1>Player1</h1>
+    <iframe width="x" height="260" src="../.images/pp.png" frameborder="0"></iframe>
+    <video controls autoplay></video>
+    <input type="file" multiple>
+    <a class='fadeout' href="#">Load</a>
+    <input class='fadeout' type="text" placeholder="playback speed" value="1">
+    <button onclick="darkMode()">Night</button><button onclick="lightMode()">Day</button>
+<script>
+	const video = document.querySelector('video'); const filesInput = document.querySelector('input[type=file]'); const speedInput = document.querySelector('input[type=text]'); const filesButton = document.querySelector('a'); const playlist = document.querySelector('ul'); filesButton.addEventListener('click', e => {filesInput.click(); e.preventDefault(); return false; }); filesInput.addEventListener('change', function (e) {playlist.innerHTML = ''; for (const file of Array.from(this.files)) {const listItem = document.createElement('li'); listItem.objUrl = URL.createObjectURL(file); listItem.textContent = file.name; listItem.addEventListener('click', function (e) {this.classList.add('played'); video.src = this.objUrl; video.playbackRate = Number(speedInput.value);});playlist.appendChild(listItem);};playlist.classList.add('fadeout');}, false); playlist.addEventListener('animationend', e => {playlist.classList.remove('fadeout');}); speedInput.addEventListener('change', e => {video.playbackRate = Number(speedInput.value); speedInput.value = Number(video.playbackRate);}); document.addEventListener('keydown', e => { switch (e.keyCode) { case 32: video.paused ? video.play() : video.pause(); break; case 37: video.currentTime += -5; break; case 39: video.currentTime += 5; break;}}); function darkMode() {var element = document.body; var content = document.getElementById("DarkModetext"); element.className = "dark-mode";} function lightMode() {var element = document.body; var content = document.getElementById("DarkModetext"); element.className = "light-mode";}
+</script>
+</body>
+</html>
