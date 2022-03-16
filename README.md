@@ -22,7 +22,7 @@ True, there isnt anything new under the sun here (besides maybe the self-destruc
 
 ### Why? ###
 Occams razor: the simplest solution is the most likely one. You dont need 34mb to make a connection to a .onion website and you dont need machine learning to remove a server side cookie. If you browsing data is stored in memory, and your memory is reset when the power turns off, you automatically reset your browsing data on open/close.
-There are benifits to running a browser that is compiled at runtime. For starters, everything is stored/operated in memory, except a few .txt documents, which saves disk space. Even then, .Pyrate isnt very memory hungry- there arent a lot of complex tasks so the risks of it over running your memory is low. Modifying the package is easy. Deleting it is even easier.
+There are benifits to running a browser that is compiled at runtime. For starters, everything is stored/operated in memory, except a few .txt documents, which saves disk space. Even then, .Pyrate isnt very memory hungry- there arent a lot of complex tasks- so the risks of it over running your memory is low. Modifying the package is easy. Deleting it is even easier.
 No one expects you to delete firefox and use .Pyrate but if youre looking for a fun project to reverse engineer/beautify or give to your teenage relative with the clear instructions ***NOT*** to abuse downloads, this might be it.
 
 ### Notes: ###
