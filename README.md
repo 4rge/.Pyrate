@@ -26,3 +26,4 @@ No one expects you to delete firefox and use .Pyrate but if youre looking for a 
 
 ### Notes: ###
 *You will need to install PyQt5 and PyQt5 webengine on your own, they are not part of the pip package. If you want access to .onion sites aswell you will also need to install tor.*
+*To use the '.djanGO' feature you must [duh] 'pip install django'*
