@@ -31,3 +31,6 @@ Sometimes you dont want to build and install a script/package, you just want to 
 ### Notes: ###
 *If you want access to .onion sites aswell you will need to install tor on your own. I'm not forcing it.*
 *To use the '.djanGO' feature you must [duh] 'pip install django'.*
+
+
+*** Work in progress, more features in beta ***
