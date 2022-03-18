@@ -1,8 +1,11 @@
 # This Python file uses the following encoding: utf-8
-
-import sys; import os; import shutil; import atexit; import requests; import qrcode; import wget; import codecs; import urllib.request; import tempfile; from bs4 import BeautifulSoup; import subprocess; from collections import deque; import re; import youtube_dl; from shutil import make_archive; from zipfile import ZipFile
-from AudioFile import AudioFile
-from PyQt5.QtWidgets import *; from PyQt5.QtWebEngineCore import QWebEngineCookieStore; from PyQt5.QtWebEngineWidgets import QWebEngineProfile, QWebEnginePage, QWebEngineView; from PyQt5.QtGui import QIcon; from PyQt5.QtCore import QUrl; from PyQt5.QtNetwork import QNetworkProxy
+try:
+	import sys; import os; import shutil; import atexit; import requests; import qrcode; import wget; import codecs; import urllib.request; import tempfile; from bs4 import BeautifulSoup; import subprocess; from collections import deque; import re; import youtube_dl; from shutil import make_archive; from zipfile import ZipFile
+	from AudioFile import AudioFile
+	from PyQt5.QtWidgets import *; from PyQt5.QtWebEngineCore import QWebEngineCookieStore; from PyQt5.QtWebEngineWidgets import QWebEngineProfile, QWebEnginePage, QWebEngineView; from PyQt5.QtGui import QIcon; from PyQt5.QtCore import QUrl; from PyQt5.QtNetwork import QNetworkProxy
+except:
+	from pip_quick import pip_quick
+	pip_quick()
 
 class after_thought():
     def __init__(self):
@@ -72,10 +75,13 @@ class PyrateBrowser(QMainWindow):
                     subprocess.run(["django-admin", "startproject", Name], capture_output=True)
                     self.add_new_tab(QUrl("http://127.0.0.1:8000/"))
                 msg = QMessageBox(self)
-                msg.setWindowTitle("/Yarrr!"); msg.setText("Now launch a seperate terminal and run 'python3 manage.py runserver'"); ok_btn = QMessageBox.addButton(msg, 0x00000400); msg.exec_()
+                msg.setWindowTitle("/Yarrr!"); msg.setText("Now launch a seperate terminal, cd into %(Name)s and run 'python3 manage.py runserver'"); ok_btn = QMessageBox.addButton(msg, 0x00000400); sys.exit(msg.exec_())
+            elif set_lang == ".hashWord":
+                msg = QMessageBox(self)
+                msg.setWindowTitle("/Yarrr!"); msg.setText(str(hash(self.urlbar.text()))); ok_btn = QMessageBox.addButton(msg, 0x00000400); sys.exit(msg.exec_())
             elif set_lang == ".abandonShip":
                 msg = QMessageBox(self)
-                msg.setWindowTitle("/Yarrr!"); msg.setText("This will delete ALL .local files associated with this instance."); ok_btn = QMessageBox.addButton(msg, 0x00000400); msg.exec_()
+                msg.setWindowTitle("/Yarrr!"); msg.setText("This will delete ALL .local files associated with this instance."); ok_btn = QMessageBox.addButton(msg, 0x00000400); sys.exit(msg.exec_())
                 if msg.clickedButton(): shutil.rmtree(cwd+"/.local/share/QtWebEngine")
             combobox3.setCurrentText(".capsQuarters" )
 
@@ -87,7 +93,7 @@ class PyrateBrowser(QMainWindow):
             elif nav == "■": self.tabs.currentWidget().stop()
             combobox1.setCurrentText("_")
 
-        engine.page().profile().setHttpCacheType(0); engine.page().profile().setPersistentCookiesPolicy(0); engine.page().profile().setHttpUserAgent("Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0"); self.tabs.setTabShape(1); self.tabs.setMovable(True); self.tabs.setDocumentMode(True); self.tabs.setTabsClosable(True); self.tabs.tabBarDoubleClicked.connect(self.tab_open_doubleclick); self.tabs.currentChanged.connect(self.current_tab_changed); self.tabs.tabCloseRequested.connect(self.close_current_tab); self.setCentralWidget(self.tabs); self.setStatusBar(self.status); self.addToolBar(navtb); combobox2.addItems([".mapRoom", ".chartCourse", ".makeNote"]); combobox2.currentTextChanged.connect(lambda: text_changed0(self)); navtb.addWidget(combobox2); combobox3.addItems([".capsQuarters", ".qrMatey", ".downLoad", ".seaShanties", ".djanGo()", ".abandonShip"]); combobox3.currentTextChanged.connect(lambda: text_changed1(self)); navtb.addWidget(combobox3); self.addToolBar(urlb); self.urlbar.returnPressed.connect(self.navigate_to_url); urlb.addWidget(self.urlbar); combobox1.addItems(["_", "◄", "►", "■", "∩"]); combobox1.currentTextChanged.connect(lambda: text_changed2(self)); urlb.addWidget(combobox1)
+        engine.page().profile().setHttpCacheType(0); engine.page().profile().setPersistentCookiesPolicy(0); engine.page().profile().setHttpUserAgent("Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0"); self.tabs.setTabShape(1); self.tabs.setMovable(True); self.tabs.setDocumentMode(True); self.tabs.setTabsClosable(True); self.tabs.tabBarDoubleClicked.connect(self.tab_open_doubleclick); self.tabs.currentChanged.connect(self.current_tab_changed); self.tabs.tabCloseRequested.connect(self.close_current_tab); self.setCentralWidget(self.tabs); self.setStatusBar(self.status); self.addToolBar(navtb); combobox2.addItems([".mapRoom", ".chartCourse", ".makeNote"]); combobox2.currentTextChanged.connect(lambda: text_changed0(self)); navtb.addWidget(combobox2); combobox3.addItems([".capsQuarters", ".qrMatey", ".hashWord", ".downLoad", ".seaShanties", ".djanGo()", ".abandonShip"]); combobox3.currentTextChanged.connect(lambda: text_changed1(self)); navtb.addWidget(combobox3); self.addToolBar(urlb); self.urlbar.returnPressed.connect(self.navigate_to_url); urlb.addWidget(self.urlbar); combobox1.addItems(["_", "◄", "►", "■", "∩"]); combobox1.currentTextChanged.connect(lambda: text_changed2(self)); urlb.addWidget(combobox1)
 
         self.setWindowIcon(QIcon(cwd+'/.Pyrate/.images/pp.png')); self.setWindowTitle(".Pyrate/.Browser"); self.setStyleSheet("color: #ffffff;" "background-color: #000000;" "selection-color: #fe2023;" "selection-background-color: #ffffff;"); self.status.setStyleSheet("background-color: #000000;"); self.tabs.setStyleSheet("background-image: url("+cwd+"/.Pyrate/.images/pp_sm.png);" "background-repeat: repeat-xy; background-color: #fe2023")
 
