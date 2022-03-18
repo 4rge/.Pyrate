@@ -1,5 +1,5 @@
 # .Pyrate
-A small, self-destructing Qt5 web browser written in python and designed for/with unique functions.
+A small, self-destructing Qt5 web browser written in python and designed for/with unique functions for Ubuntu.
 
 ### What do you mean self-destructing? ###
 When a Qt5 web browser is launched it creates a .local file that hosts all of the cookie-cache's targeted by evercookies (aka serverside cookies). I created a function titled ".abandonShip" that removes the Qt5 folder entirely, with all of it's contents, on command. I tested it against multiple serverside cookies and have yet to find one not removed by this process. That isnt to say it isnt possible, just that, for most practical purposes this proves effective.
