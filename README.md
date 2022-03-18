@@ -24,6 +24,9 @@ True, there isnt anything new under the sun here (besides maybe the self-destruc
 Occams razor: the simplest solution is the most likely one. You dont need 34mb to make a connection to a .onion website and you dont need machine learning to remove a server side cookie. If you browsing data is stored in memory, and your memory is reset when the power turns off, you automatically reset your browsing data on open/close.
 No one expects you to delete firefox and use .Pyrate but if youre looking for a fun project to reverse engineer/beautify or give to your teenage relative with the clear instructions ***NOT*** to abuse downloads, this might be it.
 
+### WTF is pip_quick? ###
+Sometimes you dont want to build and install a script/package, you just want to run it quickly and put it back in storage/delete it. That is where pip_quick comes in. You can still run setup.py but if you are ok with installing the dependencies outside of the script path and managing them yourself you can clone .Pyrate and run it immediatly from whereever you cloned it- pip_quick will subprocess all of the installs for you, including the Qt5 dependencies.
+
 ### Notes: ###
-*You will need to install PyQt5 and PyQt5 webengine on your own, they are not part of the pip package. If you want access to .onion sites aswell you will also need to install tor.*
-*To use the '.djanGO' feature you must [duh] 'pip install django'*
+*If you want access to .onion sites aswell you will need to install tor on your own. I'm not forcing it.*
+*To use the '.djanGO' feature you must [duh] 'pip install django'.*
