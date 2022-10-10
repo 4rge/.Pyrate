@@ -2,13 +2,13 @@
 A small, self-destructing Qt5 web browser written in python and designed for/with unique functions for Ubuntu.
 
 ### What do you mean self-destructing? ###
-When a Qt5 web browser is launched it creates a .local file that hosts all of the cookie-cache's targeted by evercookies (aka serverside cookies). I created a function titled ".abandonShip" that removes the Qt5 folder entirely, with all of it's contents, on command. I tested it against multiple serverside cookies and have yet to find one not removed by this process. That isnt to say it isnt possible, just that, for most practical purposes this proves effective.
+> When a Qt5 web browser is launched it creates a .local file that hosts all of the cookie-cache's targeted by serverside cookies. I created a function titled ".abandonShip" that removes the QtWebBrowser folder entirely. I tested it against multiple serverside cookies and have yet to find one not removed by this process. That isnt to say it isnt possible, just that, for most practical purposes this proves effective.
 
 ### What is with the .weirdLettering() ###
-That is Qt5 syntax: the naming of options had more to do with saving space then trying to be "l33t".
+> That is Qt5 syntax
 
 ### Ok, so what other "unique" functions are there? It's just a browser. ###
-True, there isnt anything new under the sun here (besides maybe the self-destruction thing.) It is .onion enabled so if you have already downloaded Tor you can now access .onion sites in .Pyrate aswell. It has the ability to play/load/view contents through drag and drop from your home folder making it useable beyond just visiting websites. It still has bookmarks, downloads, ect.. However the way it is arranged is fairly unique:
+> True, there isnt anything new under the sun here (besides maybe the self-destruction thing.) It is .onion enabled so if you have already downloaded Tor you can now access .onion sites in .Pyrate aswell. It has the ability to play/load/view contents through drag and drop from your home folder making it useable beyond just visiting websites. It still has bookmarks, downloads, ect.. However the way it is arranged is fairly unique:
 
 1. I did away with the over-packed menus of other browsers and consolidated the basic functionality into 3 comboboxes and a single url bar spread across 2 toolbars. This allows you to customize the layout, to an extent, without cluttering your view with dozens of buttons and menus.
 2. I never enabled redirects; I want full control of my boat in the digital ocean. You can still navigate to the redirect manually using the url bar but freedom and user control are central to the .Pyrate code.
@@ -22,11 +22,11 @@ True, there isnt anything new under the sun here (besides maybe the self-destruc
 10. '.hashWords' is a tool to generate hashes of web objects by copying urls, links, or strings into the url bar and hitting '.hashWords'. This is useful for quickly compairing long urls/links, or even entire bodies of text or code snippets against simular objects. (Note, hashes are salted by default in python, therefore results vary from one instance of .Pyrate to the next. Put simply: dont use '.hashWords' do generate a password no matter how much it sounds like the implied function. I assume you have seahorse or keypass.) 
 
 ### Why? ###
-Occams razor: the simplest solution is the most likely one. You dont need 34mb to make a connection to a .onion website and you dont need machine learning to remove a server side cookie. If you browsing data is stored in memory, and your memory is reset when the power turns off, you automatically reset your browsing data on open/close.
-No one expects you to delete firefox and use .Pyrate but if youre looking for a fun project to reverse engineer/beautify or give to your teenage relative with the clear instructions ***NOT*** to abuse downloads, this might be it.
+> Occams razor: the simplest solution is the most likely one. You dont need 34mb to make a connection to a .onion website and you dont need machine learning to remove a server side cookie. If you browsing data is stored in memory, and your memory is reset when the power turns off, you automatically reset your browsing data on open/close.
+> No one expects you to delete firefox and use .Pyrate but if youre looking for a fun project to reverse engineer/beautify or give to your teenage relative with the clear instructions ***NOT*** to abuse downloads, this might be it.
 
 ### WTF is pip_quick? ###
-Sometimes you dont want to build and install a script/package, you just want to run it quickly and put it back in storage/delete it. That is where pip_quick comes in. You can still run setup.py but if you are ok with installing the dependencies outside of the script path and managing them yourself you can clone .Pyrate and run it immediatly from whereever you cloned it- pip_quick will subprocess all of the installs for you, including the Qt5 dependencies.
+> Sometimes you dont want to build and install a script/package, you just want to run it quickly and put it back in storage/delete it. That is where pip_quick comes in. You can still run setup.py but if you are ok with installing the dependencies outside of the script path and and in your .local file. You can clone .Pyrate and run it immediatly from whereever you cloned it- pip_quick will subprocess all of the installs for you, including the Qt5 dependencies.
 
 ### Notes: ###
 *If you want access to .onion sites aswell you will need to install tor on your own. I'm not forcing it.*
