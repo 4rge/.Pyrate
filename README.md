@@ -29,8 +29,16 @@ A small, self-destructing Qt5 web browser written in python and designed for/wit
 > Sometimes you dont want to build and install a script/package, you just want to run it quickly and put it back in storage/delete it. That is where pip_quick comes in. You can still run setup.py but if you are ok with installing the dependencies outside of the script path and and in your .local file. You can clone .Pyrate and run it immediatly from whereever you cloned it- pip_quick will subprocess all of the installs for you, including the Qt5 dependencies.
 
 ### Notes: ###
-*If you want access to .onion sites aswell you will need to install tor on your own. I'm not forcing it.*
-*To use the '.djanGO' feature you must [duh] 'pip install django'.*
+*If you want access to .onion sites aswell you will need to install tor on your own.*
 
+```BASH
+sudo pacman -S tor -y || sudo apt install tor -y && sudo systemctl enable tor && sudo systemctl start tor
+```
+
+* To use the '.djanGO' feature you must run *
+
+```BASH
+pip install django
+```
 
 *** Work in progress, more features in beta ***
