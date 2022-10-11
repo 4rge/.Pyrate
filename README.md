@@ -35,7 +35,7 @@ A small, self-destructing Qt5 web browser written in python and designed for/wit
 sudo pacman -S tor -y || sudo apt install tor -y && sudo systemctl enable tor && sudo systemctl start tor
 ```
 
-* To use the '.djanGO' feature you must run *
+### To use the '.djanGO' feature you must run ###
 
 ```BASH
 pip install django
