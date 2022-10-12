@@ -1,5 +1,5 @@
 <html>
-<img src="Pyrate.svg" width="800" height="200">
+<img src="Pyrate.svg" width="100%" height="100%">
 <p class="has-line-data" data-line-start="0" data-line-end="1">A small, self-destructing Qt5 web browser written in python and designed for/with unique functions for Ubuntu.</p>
 <h3 class="code-line" data-line-start=2 data-line-end=3 ><a id="What_do_you_mean_selfdestructing_2"></a>What do you mean self-destructing?</h3>
 <blockquote>
