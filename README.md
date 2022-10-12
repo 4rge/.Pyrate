@@ -1,4 +1,4 @@
-<img src="easyi3.svg" width="800" height="200">
+<img src="Pyrate.svg" width="800" height="200">
 
 A small, self-destructing Qt5 web browser written in python and designed for/with unique functions for Ubuntu.
 
