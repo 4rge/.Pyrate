@@ -9,22 +9,25 @@ except:
 
 class after_thought():
     def __init__(self):
-        for artists in os.listdir(os.getcwd()+"/.Pyrate/Set_List/"):
-            if artists.endswith(".txt"):
-                try:
-                    loc = os.getcwd()+"/.Pyrate/Set_List/"
-                    for bandName in os.listdir(loc):
-                        if bandName.endswith(".txt"):
-                            with open(loc+bandName) as setlist:
-                                tracks = setlist.readlines(); q = deque()
-                                setlist.close(); os.remove(loc+bandName)
-                                for trk_numbr in tracks:
-                                    trk = q.append(trk_numbr)
-                                    try:
-                                        with youtube_dl.YoutubeDL({'format':'bestaudio/best', 'keepvideo':True, 'outtmpl':'Music/'+bandName.replace(".txt", "")+'/%(title)s.mp3'}) as ydl:
-                                            ydl.download([(youtube_dl.YoutubeDL().extract_info(url = ("https://www.youtube.com/watch?v=" + (re.findall(r"watch\?v=(\S{11})", (urllib.request.urlopen("https://www.youtube.com/results?search_query=" + (bandName+q.popleft()).replace(" ", "+"))).read().decode()))[0]), download=False))['webpage_url']])
-                                    except: continue
-                except: continue
+        with youtube_dl.YoutubeDL({'format':'bestaudio/best', 'keepvideo':True, 'outtmpl':'Music/'+bandName.replace(".txt", "")+'/%(title)s.mp3'}) as ydl:
+            for artists in os.listdir(os.getcwd()+"/.Pyrate/Set_List/"):
+                if artists.endswith(".txt"):
+                    try:
+                        loc = os.getcwd()+"/.Pyrate/Set_List/"
+                        for bandName in os.listdir(loc):
+                            if bandName.endswith(".txt"):
+                                with open(loc+bandName) as setlist:
+                                    tracks = setlist.readlines()
+                                    setlist.close()
+                                    os.remove(loc+bandName)
+                                    for trk_numbr in tracks:
+                                        try:
+                                            webpage_url = (youtube_dl.YoutubeDL().extract_info(url = ("https://www.youtube.com/watch?v=" + (re.findall(r"watch\?v=(\S{11})", (urllib.request.urlopen("https://www.youtube.com/results?search_query=" + (bandName+trk_numbr).replace(" ", "+"))).read().decode()))[0]), download=False))['webpage_url']
+                                            ydl.download([webpage_url])
+                                        except:
+                                            continue
+                    except:
+                        continue
 
 class PyrateBrowser(QMainWindow):
     def __init__(self):
