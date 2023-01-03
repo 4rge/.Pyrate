@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-  </head>
-	<title>Pyrate_Player</title>
+    <title>Pyrate_Player</title>
 <style>
 	* { box-sizing: border-box; }
 	body { margin: auto; font-family: sans-serif; }
@@ -23,17 +22,56 @@
 	.dark-mode {background-color: black; color: #e01b24;}
 	.light-mode {background-color: #e01b24; color: black;}
 </style>
-<ul></ul>
-<body>
+  </head>
+  <body>
     <h1>Player1</h1>
     <iframe width="x" height="260" src="../.images/pp.png" frameborder="0"></iframe>
     <video controls autoplay></video>
     <input type="file" multiple>
-    <a class='fadeout' href="#">Load</a>
-    <input class='fadeout' type="text" placeholder="playback speed" value="1">
+    <a class="fadeout" href="#">Load</a>
+    <input class="fadeout" type="text" placeholder="playback speed" value="1">
     <button onclick="darkMode()">Night</button><button onclick="lightMode()">Day</button>
-<script>
-	const video = document.querySelector('video'); const filesInput = document.querySelector('input[type=file]'); const speedInput = document.querySelector('input[type=text]'); const filesButton = document.querySelector('a'); const playlist = document.querySelector('ul'); filesButton.addEventListener('click', e => {filesInput.click(); e.preventDefault(); return false; }); filesInput.addEventListener('change', function (e) {playlist.innerHTML = ''; for (const file of Array.from(this.files)) {const listItem = document.createElement('li'); listItem.objUrl = URL.createObjectURL(file); listItem.textContent = file.name; listItem.addEventListener('click', function (e) {this.classList.add('played'); video.src = this.objUrl; video.playbackRate = Number(speedInput.value);});playlist.appendChild(listItem);};playlist.classList.add('fadeout');}, false); playlist.addEventListener('animationend', e => {playlist.classList.remove('fadeout');}); speedInput.addEventListener('change', e => {video.playbackRate = Number(speedInput.value); speedInput.value = Number(video.playbackRate);}); document.addEventListener('keydown', e => { switch (e.keyCode) { case 32: video.paused ? video.play() : video.pause(); break; case 37: video.currentTime += -5; break; case 39: video.currentTime += 5; break;}}); function darkMode() {var element = document.body; var content = document.getElementById("DarkModetext"); element.className = "dark-mode";} function lightMode() {var element = document.body; var content = document.getElementById("DarkModetext"); element.className = "light-mode";}
+    <ul></ul>
+    <script>
+      const video = document.querySelector("video");
+      const filesInput = document.querySelector('input[type="file"]');
+      const speedInput = document.querySelector('input[type="text"]');
+      const filesButton = document.querySelector("a");
+      const playlist = document.querySelector("ul");
+      
+      filesButton.addEventListener("click", e => {
+        filesInput.click();
+        e.preventDefault();
+        return false;
+      });
+      
+      filesInput.addEventListener("change", function(e) {
+        playlist.innerHTML = "";
+        for (const file of Array.from(this.files)) {
+          const listItem = document.createElement("li");
+          listItem.objUrl = URL.createObjectURL(file);
+          listItem.textContent = file.name;
+          listItem.addEventListener("click", function(e) {
+            this.classList.add("played");
+		video.src = this.objUrl;
+		video.playbackRate = Number(speedInput.value);
+		});
+		playlist.appendChild(listItem);
+		};
+		playlist.classList.add("fadeout");
+		}, false);
+
+	playlist.addEventListener("animationend", e => {
+	playlist.classList.remove("fadeout");
+	});
+
+	function darkMode() {
+	document.body.classList.toggle("dark-mode");
+	}
+
+	function lightMode() {
+	document.body.classList.toggle("light-mode");
+	}
 </script>
 </body>
 </html>
