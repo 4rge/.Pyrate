@@ -8,5 +8,4 @@
 <h3 class="code-line" data-line-start=36 data-line-end=37 ><a id="To_use_the_djanGO_feature_you_must_run_36"></a>After cloning run:</h3>
 <pre><code class="has-line-data" data-line-start="39" data-line-end="41" class="language-BASH">python3 ~/.Pyrate/pip_quick.py
 </code></pre>
-<p class="has-line-data" data-line-start="42" data-line-end="43">*** Work in progress, more features in beta ***</p>
 </html>
