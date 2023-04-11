@@ -5,8 +5,8 @@
 <p class="has-line-data" data-line-start="30" data-line-end="31"><em>If you want access to .onion sites aswell you will need to install tor on your own.</em></p>
 <pre><code class="has-line-data" data-line-start="33" data-line-end="35" class="language-BASH">sudo pacman -S tor -y || sudo apt install tor -y &amp;&amp; sudo systemctl <span class="hljs-built_in">enable</span> tor &amp;&amp; sudo systemctl start tor
 </code></pre>
-<h3 class="code-line" data-line-start=36 data-line-end=37 ><a id="To_use_the_djanGO_feature_you_must_run_36"></a>To use the ‘.djanGO’ feature you must run</h3>
-<pre><code class="has-line-data" data-line-start="39" data-line-end="41" class="language-BASH">pip install django
+<h3 class="code-line" data-line-start=36 data-line-end=37 ><a id="To_use_the_djanGO_feature_you_must_run_36"></a>After cloning run:</h3>
+<pre><code class="has-line-data" data-line-start="39" data-line-end="41" class="language-BASH">python3 ~/.Pyrate/pip_quick
 </code></pre>
 <p class="has-line-data" data-line-start="42" data-line-end="43">*** Work in progress, more features in beta ***</p>
 </html>
